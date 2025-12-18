@@ -33,6 +33,11 @@ The program is organized using multiple functions to keep the code clean and rea
 - `PlayGame()` – Controls the main game loop
 
 ---
+## 🔁 Flowchart
+The following flowchart shows the logic of the XO (Tic-Tac-Toe) game:
+
+![XO Flowchart](flowchart.png)
+
 
 ## 📦 Arrays and Pointers
 - A 3×3 two-dimensional array is used to represent the game board.
