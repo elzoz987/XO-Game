@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// Prints the game board
 void displayBoard(const char board[3][3])
 {
     for (int i = 0; i < 3; i++)
@@ -19,6 +20,7 @@ void displayBoard(const char board[3][3])
     }
 }
 
+// Checks if the move is inside the board and the cell is empty
 bool isValidMove(const char board[3][3], int row, int col)
 {
     if (col <= 2 && col >= 0 &&
@@ -32,7 +34,7 @@ bool isValidMove(const char board[3][3], int row, int col)
         return false;
     }
 }
-
+// Takes row and column from the user
 void takeMove(int &row, int &col)
 {
     cout << "Enter Row (0-2)";
@@ -41,10 +43,13 @@ void takeMove(int &row, int &col)
     cout << "Enter column(0-2)";
     cin >> col;
 }
-void updateBoard(char board[3][3], int row, int col, char currentPlayer)
+// Updates the board using pointer
+void updateBoard(char (*board)[3], int row, int col, char currentPlayer)
 {
     board[row][col] = currentPlayer;
 }
+
+// Checks if the current player wins
 
 bool checkWin(const char board[3][3], char currentPlayer)
 {
@@ -83,6 +88,7 @@ bool checkWin(const char board[3][3], char currentPlayer)
     return false;
 }
 
+// Checks if the game is a draw
 bool checkDraw(const char board[3][3]){
      for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
@@ -93,6 +99,7 @@ bool checkDraw(const char board[3][3]){
     }
     return true;
 }
+// Controls the game flow
 void PlayGame(){
     char baord[3][3] = {
         {' ', ' ', ' '},
@@ -134,7 +141,7 @@ void PlayGame(){
     }
 
 }
-
+// entry point
 int main()
 {
        PlayGame();
